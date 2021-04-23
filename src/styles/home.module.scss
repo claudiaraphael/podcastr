@@ -33,7 +33,7 @@
       }
 
       .episodeDetails {
-        flex: 1;
+        width: calc(100% - 6rem);
         margin-left: 1rem;
 
         a {
@@ -52,7 +52,7 @@
         p {
           font-size: 0.875rem;
           margin-top: 0.5rem;
-          max-width: 70%;
+          max-width: 75%;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
