@@ -44,6 +44,6 @@ Abra no navegador [https://localhost:3000](https://localhost:3000)
 
 ## Responsivo
 
-| Screenshot 1                                  | Screenshot 2                                          | Screenshot 2                               |
-| --------------------------------------------- | ----------------------------------------------------- | ------------------------------------------ |
-| <img src="mobile-home-light.png" width="250"> | <img src="mobile-home-playing-light.png" width="250"> | <img src="mobile-detail-dark" width="250"> |
+| Screenshot 1                                  | Screenshot 2                                          | Screenshot 2                                   |
+| --------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
+| <img src="mobile-home-light.png" width="250"> | <img src="mobile-home-playing-light.png" width="250"> | <img src="mobile-detail-dark.png" width="250"> |
