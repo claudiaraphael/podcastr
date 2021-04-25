@@ -1,0 +1,18 @@
+:root {
+  --white: #222;
+  --font-player: #fff;
+
+  --gray-50: #31343c;
+  --gray-100: #43454a;
+  --gray-200: rgb(120, 120, 120);
+  --gray-500: #cbcbcb;
+  --gray-800: #e6e6e6;
+
+  --green-500: #04d361;
+
+  --purple-300: #9f75ff;
+  --purple-400: #9164fa;
+  --purple-500: #8257e5;
+  --purple-800: #6f48c9;
+  --font-player: #fff;
+}

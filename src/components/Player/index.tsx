@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
@@ -67,7 +68,7 @@ const Player: React.FC = () => {
   }, []);
 
   return (
-    <div className={styles.playerContainer}>
+    <div className={`${styles.playerContainer} ${episode ? styles.hasEpisode : ''}`}>
       <header>
         <img src="/playing.svg" alt="Tocando agorra"/>
         <strong>Tocando agora {episode?.title}</strong>
@@ -91,6 +92,15 @@ const Player: React.FC = () => {
       )}
 
       <footer className={!episode ? styles.empty : ''}>
+        {!!episode && (
+          <Link href={`/episodes/${episode?.id}`}>
+            <a className={styles.currentEpisodeDetail}>
+              {`${episode?.title} | ${episode?.members} | ${episode?.publishedAt}`}
+            </a>
+          </Link>
+        )}
+
+
         <div className={styles.progress}>
           <span>{convertDurationToTimeString(progress)}</span>
           <div className={styles.slider}>

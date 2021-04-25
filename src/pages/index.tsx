@@ -29,12 +29,18 @@ type HomeProps = {
 }
 
 const Home: React.FC<HomeProps> = ({ allEpisodes, latestEpisodes }) => {
-  const { playList } = usePlayer();
+  const {
+    playList,
+    episodes: episodeList,
+    currentEpisodeIndex,
+  } = usePlayer();
+
+  const episode = episodeList[currentEpisodeIndex];
 
   const episodes = [...latestEpisodes, ...allEpisodes];
 
   return (
-    <div className={styles.homepage}>
+    <div className={`${styles.homepage} ${episode ? styles.hasEpisode : ''}`}>
       <Head>
         <title>Home | Podcastr</title>
       </Head>
@@ -74,51 +80,51 @@ const Home: React.FC<HomeProps> = ({ allEpisodes, latestEpisodes }) => {
       <section className={styles.allEpisodes}>
           <h2>Todos episódios</h2>
 
-          <table cellSpacing={0}>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Podcast</th>
-                <th>Integrantes</th>
-                <th>Data</th>
-                <th>Duração</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {allEpisodes.map((episode, index) => {
-                return (
-                  <tr key={episode.id}>
-                    <td style={{ width: 72 }}>
-                      <Image
-                        width={120}
-                        height={120}
-                        src={episode.thumbnail}
-                        alt={episode.title}
-                        objectFit="cover"
-                      />
-                    </td>
-                    <td>
-                      <Link href={`/episodes/${episode.id}`}>
-                        <a>{episode.title}</a>
-                      </Link>
-                    </td>
-                    <td>{episode.members}</td>
-                    <td style={{ width: 100 }}>{episode.publishedAt}</td>
-                    <td>{episode.durationAsString}</td>
-                    <td>
-                      <button
-                        type="button"
-                        onClick={() => playList(episodes, index + latestEpisodes.length)}
-                      >
-                        <img src="/play-green.svg" alt="play" />
-                      </button>
-                    </td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
+          <ul>
+            <li className={styles.header}>
+              <span className={styles.thumbnail}></span>
+              <span className={styles.title}>Podcast</span>
+              <span className={styles.member}>Integrantes</span>
+              <span className={styles.date}>Data</span>
+              <span className={styles.duration}></span>
+              <span className={styles.action}></span>
+            </li>
+            {allEpisodes.map((episode, index) => (
+              <li key={episode.id}>
+                <div className={styles.thumbnail}>
+                  <Image
+                    width={120}
+                    height={120}
+                    src={episode.thumbnail}
+                    alt={episode.title}
+                    objectFit="cover"
+                  />
+                </div>
+                <div className={styles.title}>
+                  <Link href={`/episodes/${episode.id}`}>
+                    <a>{episode.title}</a>
+                  </Link>
+                </div>
+                <span className={styles.member}>
+                  {episode.members}
+                </span>
+                <span className={styles.date}>
+                  {episode.publishedAt}
+                </span>
+                <span className={styles.duration}>
+                  {episode.durationAsString}
+                </span>
+                <span className={styles.action}>
+                  <button
+                    type="button"
+                    onClick={() => playList(episodes, index + latestEpisodes.length)}
+                  >
+                    <img src="/play-green.svg" alt="play" />
+                  </button>
+                </span>
+              </li>
+            ))}
+          </ul>
       </section>
     </div>
   )

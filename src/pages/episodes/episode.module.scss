@@ -84,3 +84,14 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .episode {
+    height: calc(100vh - 6.5rem - 10rem);
+    overflow-y: scroll;
+  }
+
+  .episode.hasPlayingEpisode {
+    height: calc(100vh - 6.5rem - 12rem);
+  }
+}

@@ -29,10 +29,16 @@ type EpisodeProps = {
 }
 
 const Episode: React.FC<EpisodeProps> = ({ episode }) => {
-  const { play } = usePlayer();
+  const {
+    play,
+    episodes,
+    currentEpisodeIndex,
+  } = usePlayer();
+
+  const playingEpisode = episodes[currentEpisodeIndex];
 
   return (
-    <div className={styles.episode}>
+    <div className={`${styles.episode} ${playingEpisode ? styles.hasPlayingEpisode : ''}`}>
       <Head>
         <title>{episode.title} | Podcastr</title>
       </Head>
