@@ -11,40 +11,40 @@ Desenvolvido usando React + Next + Typescript + JSON Server para exibir os dados
 ## Comandos
 
 <br/>
-```
+
 git clone https://github.com/joonatassouza/podcastr.git
-```
+
 <br/>
-```
+
 cd podcastr
-```
+
 <br/>
-```
+
 yarn
-``` 
-ou 
-```
+
+ou
+
 npm install
-```
+
 <br/>
-```
+
 yarn server
-``` 
-ou 
-```
+
+ou
+
 npm run server
-``` 
+
 // para executar o servidor
 <br/>
 Em outra aba execute
 <br/>
-```
+
 yarn dev
-``` 
-ou 
-```
+
+ou
+
 npm run dev
-``` 
+
 // para executar o projeto
 <br/>
 Abra no navegador [https://localhost:3000](https://localhost:3000)
@@ -54,31 +54,31 @@ Abra no navegador [https://localhost:3000](https://localhost:3000)
 ### Build
 
 <br/>
-```
+
 yarn server
-``` 
-ou 
-```
+
+ou
+
 npm run server
-``` 
+
 // para deixar o server rodando
 <br/>
-```
+
 yarn build
-``` 
-ou 
-```
+
+ou
+
 npm run build
-``` 
+
 // para gerar a build
 <br/>
-```
+
 yarn start
-``` 
-ou 
-```
+
+ou
+
 npm run start
-``` 
+
 // para executar a build de produção
 
 ## Tema claro e escuro
